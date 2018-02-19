@@ -1,0 +1,63 @@
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+const babel = require('rollup-plugin-babel');
+const replace = require('rollup-plugin-replace');
+const uglify = require('rollup-plugin-uglify');
+const json = require('rollup-plugin-json');
+const builtins = require('rollup-plugin-node-builtins');
+const globals = require('rollup-plugin-node-globals');
+const flow = require('rollup-plugin-flow');
+const filesize = require('rollup-plugin-filesize');
+
+const env = process.env.NODE_ENV;
+const name = process.env.npm_package_name;
+
+const config = {
+  output: {
+    name,
+    sourcemap: true,
+    globals: {
+      react: 'React',
+    },
+  },
+  external: ['react'],
+  plugins: [
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(env),
+    }),
+    globals(),
+    builtins(),
+    json(),
+    resolve({
+      module: true,
+      jsnext: true,
+      main: true,
+      preferBuiltins: true,
+      modulesOnly: true,
+    }),
+    commonjs({
+      ignoreGlobal: true,
+      exclude: ['modules/**'],
+    }),
+    flow({ all: true }),
+    babel({
+      exclude: ['node_modules/**'],
+      babelrc: true,
+    }),
+    filesize(),
+  ],
+};
+
+if (env === 'production') {
+  config.plugins.push(
+    uglify({
+      compress: {
+        dead_code: true,
+        warnings: false,
+        drop_debugger: true,
+      },
+    })
+  );
+}
+
+module.exports = config;
