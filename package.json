@@ -25,6 +25,10 @@
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged"
   },
+  "files": [
+    "readme.md",
+    "dist/**"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tdeekens/react-memoise.git"
