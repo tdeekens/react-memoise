@@ -55,8 +55,13 @@ const ParentComponent = props => (
 ```jsx
 import Memoise from 'react-memoise';
 
-const ParentComponent = props =>
-  <Memoise args={[props.a, props.b]} compute={(a, b => a * b)} render={computedValue => <code>{computedValue}</code>}>
+const ParentComponent = props => (
+  <Memoise
+    args={[props.a, props.b]}
+    compute={(a, b => a * b)}
+    render={computedValue => <code>{computedValue}</code>}
+  />
+);
 ```
 
 #### Using a component
@@ -64,10 +69,15 @@ const ParentComponent = props =>
 ```jsx
 import Memoise from 'react-memoise';
 
-const ConsumerComponent = props => <code>{props.computedValue}</code>
+const ConsumerComponent = props => <code>{props.computedValue}</code>;
 
-const ParentComponent = props =>
-  <Memoise args={[props.a, props.b]} compute={(a, b => a * b)} component={ConsumerComponent}>
+const ParentComponent = props => (
+  <Memoise
+    args={[props.a, props.b]}
+    compute={(a, b => a * b)}
+    component={ConsumerComponent}
+  />
+);
 ```
 
 #### Customization
