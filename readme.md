@@ -24,7 +24,7 @@
 
 <p align="center">
   <a href="https://circleci.com/gh/tdeekens/react-memoise">
-    <img alt="CircleCI Status" src="https://circleci.com/gh/tdeekens/react-memoise.svg?style=shield&circle-token=63ee7a0e1c766b6b76da6f7ba4c7b9f2a7876191">
+    <img alt="CircleCI Status" src="https://circleci.com/gh/tdeekens/react-memoise.svg?style=shield&circle-token=ec2b089c775c53209c334673c8b5cbbc8cf2e8d7">
   </a>
   <a href="https://codecov.io/gh/tdeekens/react-memoise">
     <img alt="Codecov Coverage Status" src="https://img.shields.io/codecov/c/github/tdeekens/react-memoise.svg?style=flat-square">
