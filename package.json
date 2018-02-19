@@ -122,5 +122,6 @@
       "npm run format:md",
       "git add"
     ]
-  }
+  },
+  "version": "1.0.0"
 }
