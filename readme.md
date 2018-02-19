@@ -1,10 +1,10 @@
 <p align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/tdeekens/memoise/master/logo.png" /><br /><br />
+  <img alt="Logo" src="https://raw.githubusercontent.com/tdeekens/react-memoise/master/logo.jpg" /><br /><br />
 </p>
 
-<h2 align="center">📚 react-memoise - declaratively memoise  a computation within a React component 🧠</h2>
+<h2 align="center">📚 react-memoise - declaratively memoise a computation in a React component 🧠</h2>
 <p align="center">
-  <i>Given a <Memoise> component pass it some props and a computation function and it will render with a memoised result.</i>
+  <i>Given a <Memoise> component pass it some props and a computation and it will re-render with a memoised result.</i>
 </p>
 
 <p align="center">
@@ -72,4 +72,4 @@ const ParentComponent = props =>
 
 #### Customization
 
-You can pass in an `areArgsEqual` prop with the signature of `(prevArgs: Args, nextArgs: Args) => boolean` so customize the equality check which defaults to a shallow equal.
+You can pass in an `areArgsEqual` prop with the signature of `(prevArgs: Args, nextArgs: Args) => boolean` to customise the equality check which defaults to a shallow equal.
