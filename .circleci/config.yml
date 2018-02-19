@@ -1,5 +1,5 @@
 aliases:
-  - &working_directory ~/react-memoize
+  - &working_directory ~/react-memoise
 
   - &restore_yarn_cache
     keys:

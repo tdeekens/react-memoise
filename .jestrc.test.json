@@ -1,14 +1,10 @@
 {
   "displayName": "test",
-  "setupFiles": ["raf/polyfill", "jest-localstorage-mock"],
+  "setupFiles": ["raf/polyfill"],
   "setupTestFrameworkScriptFile": "./.jest-runner-testrc.js",
   "snapshotSerializers": ["enzyme-to-json/serializer"],
   "testRegex": "\\.spec\\.js$",
   "testEnvironment": "jsdom",
-  "testPathIgnorePatterns": [
-    "/node_modules/",
-    "/packages/.*/node_modules",
-    "/packages/.*/dist"
-  ],
+  "testPathIgnorePatterns": ["/node_modules/", "dist"],
   "coveragePathIgnorePatterns": ["/node_modules/"]
 }

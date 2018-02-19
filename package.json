@@ -1,6 +1,6 @@
 {
-  "name": "react-memoize",
-  "description": "A component to declaratively memoize a computation within a React component.",
+  "name": "react-memoise",
+  "description": "A component to declaratively memoise a computation within a React component.",
   "scripts": {
     "postinstall": "check-node-version --package --print",
     "develop": "jest --projects .jestrc.*.json --watch",
@@ -20,14 +20,14 @@
     "prebuild": "rimraf dist/** && cpx typings/* dist/typings",
     "build": "cross-env npm run build:es && npm run build:cjs",
     "build:watch": "cross-env npm run build:es -- -w",
-    "build:es": "cross-env NODE_ENV=development rollup -c rollup.config.js -f es -i modules/index.js -o dist/react-memoize.es.js",
-    "build:cjs": "cross-env NODE_ENV=development rollup -c rollup.config.js -f cjs -i modules/index.js -o dist/react-memoize.cjs.js",
+    "build:es": "cross-env NODE_ENV=development rollup -c rollup.config.js -f es -i modules/index.js -o dist/react-memoise.es.js",
+    "build:cjs": "cross-env NODE_ENV=development rollup -c rollup.config.js -f cjs -i modules/index.js -o dist/react-memoise.cjs.js",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tdeekens/react-memoize.git"
+    "url": "git+https://github.com/tdeekens/react-memoise.git"
   },
   "author": "Tobias Deekens <nerd@tdeekens.name>",
   "license": "MIT",
@@ -36,9 +36,9 @@
     "npm": ">=3"
   },
   "bugs": {
-    "url": "https://github.com/tdeekens/react-memoize/issues"
+    "url": "https://github.com/tdeekens/react-memoise/issues"
   },
-  "homepage": "https://github.com/tdeekens/react-memoize#readme",
+  "homepage": "https://github.com/tdeekens/react-memoise#readme",
   "devDependencies": {
     "@commitlint/cli": "6.1.0",
     "@commitlint/config-conventional": "6.1.0",
@@ -76,7 +76,6 @@
     "husky": "0.14.3",
     "jest": "22.3.0",
     "jest-enzyme": "4.2.0",
-    "jest-localstorage-mock": "2.2.0",
     "jest-runner-eslint": "0.4.0",
     "lint-staged": "6.1.1",
     "prettier": "1.10.2",
@@ -101,11 +100,13 @@
     "react-dom": "^15.6.0 || ^16.0.0"
   },
   "dependencies": {
-    "warning": "^3.0.0"
+    "warning": "^3.0.0",
+    "fast-equals": "^1.0.6"
   },
   "keywords": [
     "react",
     "memoize",
+    "memoise",
     "performance"
   ],
   "lint-staged": {
