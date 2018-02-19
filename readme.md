@@ -44,7 +44,7 @@ Just `yarn add react-memoise` or `npm i react-memoise`.
 import Memoise from 'react-memoise';
 
 const ParentComponent = props => (
-  <Memoise args={[props.a, props.b]} compute={(a, b => a * b)}>
+  <Memoise args={[props.a, props.b]} compute={(a, b) => a * b}>
     {computedValue => <code>{computedValue}</code>}
   </Memoise>
 );
@@ -58,7 +58,7 @@ import Memoise from 'react-memoise';
 const ParentComponent = props => (
   <Memoise
     args={[props.a, props.b]}
-    compute={(a, b => a * b)}
+    compute={(a, b) => a * b}
     render={computedValue => <code>{computedValue}</code>}
   />
 );
@@ -74,7 +74,7 @@ const ConsumerComponent = props => <code>{props.computedValue}</code>;
 const ParentComponent = props => (
   <Memoise
     args={[props.a, props.b]}
-    compute={(a, b => a * b)}
+    compute={(a, b) => a * b}
     component={ConsumerComponent}
   />
 );
